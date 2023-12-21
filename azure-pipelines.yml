@@ -38,7 +38,12 @@ steps:
 - task: NuGetCommand@2
   displayName: 'Publish NuGet package'
   inputs:
-    command: push
-    feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
+    command: 'push'
+    feedsToUse: 'select'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    vstsFeed: ajtraining/ajtraining
+    publishVstsFeed: ajtraining/ajtraining
+    versioningScheme: 'off'
     allowPackageConflicts: true
-  condition: succeeded()
+
