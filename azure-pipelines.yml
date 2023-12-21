@@ -43,7 +43,7 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     vstsFeed: 'ajtraining/Space Game - web - Dependencies'
-    publishVstsFeed: 'ajtraining/ajtraining/Space Game - web - Dependencies'
+    publishVstsFeed: 'ajtraining/Space Game - web - Dependencies'
     versioningScheme: 'off'
     allowPackageConflicts: true
 
